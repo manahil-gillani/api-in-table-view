@@ -33,7 +33,7 @@ private let repository = airportRepository()
               case.success(let airports):
                   self?.airports = airports
                   print("fetched airports data: \(airports)")
-                 // self?.tableView.reloadData()
+                  self?.tableView.reloadData()
               case.failure(let error):
                   print("error fetching airport details: \(error.localizedDescription)")
               }
