@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D5309912C5C7D98008F1690 /* customcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5309902C5C7D98008F1690 /* customcell.swift */; };
 		6DE14F332C56C72900708EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE14F322C56C72900708EAD /* AppDelegate.swift */; };
 		6DE14F352C56C72900708EAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE14F342C56C72900708EAD /* SceneDelegate.swift */; };
 		6DE14F3A2C56C72900708EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE14F382C56C72900708EAD /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D5309902C5C7D98008F1690 /* customcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customcell.swift; sourceTree = "<group>"; };
 		6DE14F2F2C56C72900708EAD /* api passing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "api passing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE14F322C56C72900708EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DE14F342C56C72900708EAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D53098F2C5C7CF6008F1690 /* table view */ = {
+			isa = PBXGroup;
+			children = (
+				6D5309902C5C7D98008F1690 /* customcell.swift */,
+			);
+			path = "table view";
+			sourceTree = "<group>";
+		};
 		6DE14F262C56C72900708EAD = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		6DE14F312C56C72900708EAD /* api passing */ = {
 			isa = PBXGroup;
 			children = (
+				6D53098F2C5C7CF6008F1690 /* table view */,
 				6DE14F322C56C72900708EAD /* AppDelegate.swift */,
 				6DE14F342C56C72900708EAD /* SceneDelegate.swift */,
 				6DE14F562C56CAE400708EAD /* ViewControllers */,
@@ -212,6 +223,7 @@
 				6DE14F4E2C56CA6600708EAD /* Airport.swift in Sources */,
 				6DE14F582C56CDD900708EAD /* ViewController.swift in Sources */,
 				6DE14F352C56C72900708EAD /* SceneDelegate.swift in Sources */,
+				6D5309912C5C7D98008F1690 /* customcell.swift in Sources */,
 				6DE14F4A2C56CA3800708EAD /* airportRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

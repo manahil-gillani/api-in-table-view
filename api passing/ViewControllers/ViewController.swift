@@ -7,18 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 private let repository = airportRepository()
     private var airports: [Airport] = []
     
-    @IBOutlet weak var tableView: UITableView!
+   let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(customcell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 120
 
         fetchingAPIData()
         }
@@ -30,26 +33,27 @@ private let repository = airportRepository()
               case.success(let airports):
                   self?.airports = airports
                   print("fetched airports data: \(airports)")
-                  self?.tableView.reloadData()
+                 // self?.tableView.reloadData()
               case.failure(let error):
                   print("error fetching airport details: \(error.localizedDescription)")
               }
           }
       }
    }
-}
-
-extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = airports.count
         return count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else{
-            fatalError("unable to deque cell with identifier")
-        }
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! customcell
+        //else{fatalError("unable to deque cell with identifier")}
         let airport = airports[indexPath.row]
-        cell.textLabel?.text = airport.name
+      //  cell.id = airport.id
+        cell.airportname.text = airport.name
+        cell.code.text = airport.code
+        cell.city.text = airport.city
+        cell.country.text = airport.country
+        cell.timezone.text = airport.timezone
         return cell
     }
 }
