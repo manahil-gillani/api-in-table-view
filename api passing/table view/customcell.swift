@@ -19,6 +19,7 @@ let airportname = UILabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(id)
+        
         id.frame=CGRect(x: 70, y: -25, width: 150, height: 100)
         addSubview(airportname)
         airportname.frame=CGRect(x: 70, y: -15, width: 150, height: 100)

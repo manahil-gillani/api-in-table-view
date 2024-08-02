@@ -29,9 +29,10 @@ class APIClient{
                 return
             }
             do{
-                let response = try
-                JSONDecoder().decode(airportsresponse.self, from: data)
-                completion(.success(response.airports))
+                print("here")
+                let response = try JSONDecoder().decode([Airport].self, from: data)
+                completion(.success(response))
+                
             } catch{
                 print("Error decoding JSON: \(error)")
                                 print("Data: \(String(data: data, encoding: .utf8) ?? "No data")")
