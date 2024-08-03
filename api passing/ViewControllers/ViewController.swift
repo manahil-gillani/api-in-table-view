@@ -16,7 +16,9 @@ private let repository = airportRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         view.addSubview(tableView)
+        
         tableView.frame = view.bounds
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,6 +36,7 @@ private let repository = airportRepository()
                   self?.airports = airports
                   print("fetched airports data: \(airports)")
                   self?.tableView.reloadData()
+                 // self?.tableView.reloadData()
               case.failure(let error):
                   print("error fetching airport details: \(error.localizedDescription)")
               }
@@ -42,6 +45,7 @@ private let repository = airportRepository()
    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = airports.count
+        
         return count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
