@@ -20,9 +20,12 @@ let airportname = UILabel()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(id)
         
-        id.frame=CGRect(x: 70, y: -25, width: 150, height: 100)
+        backgroundColor = .clear
+        
+        id.frame=CGRect(x: 70, y: -25, width: 400, height: 100)
         addSubview(airportname)
-        airportname.frame=CGRect(x: 70, y: -15, width: 150, height: 100)
+        airportname.frame=CGRect(x: 50, y: -15, width: 400, height: 100)
+        airportname.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         addSubview(code)
         addSubview(city)
         addSubview(country)
